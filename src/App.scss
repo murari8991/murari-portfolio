@@ -1,10 +1,49 @@
+@import 'typed';
+
 .wrapper{
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100vh;
 }
+
+.typewriter {
+  display: block;
+  font-size: 40px;
+  display: flex;
+  > input,
+  > .placeholder {
+    display: block;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+  }
+  > .placeholder {
+    pointer-events: none;
+    color: #F5BD02;
+    @include typed(
+      "Python Dev",
+      "Frontend Dev",
+      "Backend Dev",
+      1.5,
+      (
+        caret-width: 2px,
+        caret-space: 2px
+      )
+    );
+  }
+  > input {
+    &:focus,
+    &:active {
+      + .placeholder {
+        display: none;
+      }
+    }
+  }
+}
+
 .content-card{
   width: 240px;
   height: 80px;
@@ -13,12 +52,6 @@
   -webkit-backdrop-filter: blur(13px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  /* box-shadow: 
-    0 5px 10px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 0 0px 10px rgba(255, 255, 255, 1); */
-  /* position: relative; */
   overflow: hidden;
   display: grid;
   place-items: center;
