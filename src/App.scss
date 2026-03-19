@@ -1,18 +1,37 @@
 @import 'typed';
+@import "tailwindcss";
+
+.page{
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.side-head{
+  color: #F3E6C6;
+  font-size: 20px;
+  span{
+    font-weight: 600;
+    font-size: 23px;
+  }
+}
 
 .wrapper{
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  margin-bottom: 240px;
 }
 
 .typewriter {
   display: block;
-  font-size: 40px;
+  font-size: 35px;
+  font-weight: bold;
   display: flex;
+  align-items: center;
+  justify-content: center;
   > input,
   > .placeholder {
     display: block;
@@ -22,12 +41,14 @@
   }
   > .placeholder {
     pointer-events: none;
-    color: #F5BD02;
+    color: #F3E6C6;
     @include typed(
-      "Python Dev",
-      "Frontend Dev",
-      "Backend Dev",
-      1.5,
+      "Python Dev ",
+      "Frontend Dev ",
+      "Backend Dev ",
+      "Web Dev ",
+      "Student",
+      1.75,
       (
         caret-width: 2px,
         caret-space: 2px
@@ -45,15 +66,14 @@
 }
 
 .content-card{
-  width: 240px;
-  height: 80px;
+  padding: 10px 20px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(13px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: hidden;
-  display: grid;
+  display: flex;
   place-items: center;
 }
 
@@ -64,27 +84,6 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.8),
-    transparent
-  );
-}
-
-.content-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.8),
-    transparent,
-    rgba(255, 255, 255, 0.3)
-  );
 }
 
 .my-name{
